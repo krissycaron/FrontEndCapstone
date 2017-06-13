@@ -1,28 +1,26 @@
 {
-	"savedPlaces": {
+	"places": {
 		"place0": {
 			"isDogFriendly": true,
 			"name": "placeName1",
-			"phone": "3333333333",
-			"img": "url",
 			"comment": "test this comment place",
-			"zipcode": "00000",
-			"lat": 36.1887714,
-			"lng": -86.7464799,
-			"saved": "true",
-			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1"
+			"vicinity": "1812 21st Avenue South, Nashville",
+			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
+			"googleId": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
+			"category" : "brunch",
+			"date":"6/1/2017",
+			"dogId": "dogId0"
 		},
 		"place1": {
 			"isDogFriendly": true,
 			"name": "placeName2",
-			"phone": "3333333333",
-			"img": "url",
 			"comment": "test this comment place",
-			"zipcode": "00000",
-			"lat": 36.1887714,
-			"lng": -86.7464799,
-			"saved": "true",
-			"uid": "qQE6nThm6zNoM6QvM1gN7FVE5D62"
+			"vicinity": "1812 21st Avenue South, Nashville",
+			"uid": "qQE6nThm6zNoM6QvM1gN7FVE5D62",
+			"googleId": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
+			"category" : "lunch",
+			"date":"6/1/2017",
+			"dogId": "dogId0"
 		}
 	},
 	"users": {
@@ -33,6 +31,18 @@
 		"user1": {
 			"uid": "qQE6nThm6zNoM6QvM1gN7FVE5D62",
 			"username": "London"
+		}
+	},
+	"dogs": {
+		"dogId0": {
+			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
+			"dogName": "Krissy",
+			"img": "PUTADOGURLINHERE"
+		},
+		"dogId1": {
+			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
+			"dogName": "Krissy",
+			"img": "PUTADOGURLINHERE"
 		}
 	}
 }
