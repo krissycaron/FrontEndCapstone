@@ -37,7 +37,8 @@ app.config(function($routeProvider){
   	.when('/auth', {
 	    templateUrl: 'partials/auth.html',
 	    controller: 'AuthCtrl'
-	  });
+	  })
+  		.otherwise('/auth');
 
 
 

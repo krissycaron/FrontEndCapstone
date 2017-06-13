@@ -2,7 +2,7 @@
 	"savedPlaces": {
 		"place0": {
 			"isDogFriendly": true,
-			"name": "placeName",
+			"name": "placeName1",
 			"phone": "3333333333",
 			"img": "url",
 			"comment": "test this comment place",
@@ -10,7 +10,19 @@
 			"lat": 36.1887714,
 			"lng": -86.7464799,
 			"saved": "true",
-			"uid": "gsZ7uALQtwTdvGaUAaZVP7uZdsz2"
+			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1"
+		},
+		"place1": {
+			"isDogFriendly": true,
+			"name": "placeName2",
+			"phone": "3333333333",
+			"img": "url",
+			"comment": "test this comment place",
+			"zipcode": "00000",
+			"lat": 36.1887714,
+			"lng": -86.7464799,
+			"saved": "true",
+			"uid": "qQE6nThm6zNoM6QvM1gN7FVE5D62"
 		}
 	},
 	"users": {
