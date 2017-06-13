@@ -1,0 +1,17 @@
+<input type="text" name="search" ng-model="searchPlaces">
+<button ng-click="returnPlaces()">Search</button>
+
+
+<!-- This is the informaiton populating from the Google   --> 
+<div ng-repeat="place in places">
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+    		<h3 class="panel-title">{{place.name}}</h3>
+  		</div>
+  		<div class="panel-body">
+  			<p>{{place.vicinity}}</p>
+  		</div>
+	</div>
+</div>
+
+
