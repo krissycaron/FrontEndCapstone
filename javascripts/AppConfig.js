@@ -38,6 +38,14 @@ app.config(function($routeProvider){
 	    templateUrl: 'partials/auth.html',
 	    controller: 'AuthCtrl'
 	  })
+	.when('/places/new', {
+		templateUrl: 'partials/newPlaces.html',
+		controller: 'NewPlacesCtrl'
+	  })
+	.when('/places/list', {
+		templateUrl: 'partials/viewUserPlaces.html',
+		controller: 'ViewPlacesCtrl'
+	  })
   		.otherwise('/auth');
 
 
