@@ -31,4 +31,7 @@ console.log("inside seach controller");
 	}
 
 
+	$scope.savePlaceClicked = ()
+
+
 });
