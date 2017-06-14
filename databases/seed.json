@@ -8,7 +8,7 @@
 			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
 			"googleId": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
 			"category" : "brunch",
-			"date":"6/1/2017",
+			"date": "2017-06-02T05:00:00.000Z",
 			"dogId": "dogId0"
 		},
 		"place1": {
@@ -19,7 +19,7 @@
 			"uid": "qQE6nThm6zNoM6QvM1gN7FVE5D62",
 			"googleId": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
 			"category" : "lunch",
-			"date":"6/1/2017",
+			"date": "2017-06-02T05:00:00.000Z",
 			"dogId": "dogId0"
 		}
 	},
