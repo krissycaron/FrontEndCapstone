@@ -38,6 +38,7 @@
 			    <li><a ng-click="setCategory('brunch')">Brunch</a></li>
 			    <li><a ng-click="setCategory('lunch')">Lunch</a></li>
 			    <li><a ng-click="setCategory('dinner')">Dinner</a></li>
+			    <li><a ng-click="setCategory('cafe')">Cafe</a></li>
 			    <li><a ng-click="setCategory('walk')">Walk</a></li>
 			    <li><a ng-click="setCategory('run')">Run</a></li>
 			    <li><a ng-click="setCategory('paddle')">Paddle</a></li>
@@ -45,10 +46,23 @@
 			    <li><a href="#">Separated link</a></li> -->
 			  </ul>
 			</div>
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Dogs 
+			    <span class="fa fa-paw"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+				<li ng-repeat="dog in dogs"><a ng-click="chooseDog(dog.id)">{{dog.name}}</a></li>
+			<!--     <li role="separator" class="divider"></li>
+			    <li><a href="#">Separated link</a></li> -->
+			  </ul>
+			</div>
+
 			<div>
 				<input type="text" name="comments" placeholder="Review of Dog Friendly-ness" ng-model="comment">
 				<input type="date" class="form-control" uib-datepicker-popup ng-model="newTask.dueDate" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
 			</div>
+
 		<i class="fa fa-paw" aria-hidden="true"></i>
 		<input type="checkbox" name="isDogFriendly" ng-model="newPlace.isDogFriendly"/>Dog Friendly?
 		<button ng-click="addNewPlace()">Save</button>

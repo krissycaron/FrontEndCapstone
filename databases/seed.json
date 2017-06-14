@@ -29,19 +29,28 @@
 			"username": "Krissy"
 		},
 		"user1": {
-			"uid": "qQE6nThm6zNoM6QvM1gN7FVE5D62",
-			"username": "London"
+			"uid": "vcpZR35CjCO3TrkkpUEkC5iBI222",
+			"username": "Carolyn"
+		},
+		"user2": {
+			"uid": "vmHBejG9KFb7yNTESWn7KtdwpwR2",
+			"username": "Amanda"
 		}
 	},
 	"dogs": {
 		"dogId0": {
-			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
-			"dogName": "Krissy",
+			"uid": "vcpZR35CjCO3TrkkpUEkC5iBI222",
+			"name": "London",
 			"img": "PUTADOGURLINHERE"
 		},
 		"dogId1": {
 			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
-			"dogName": "Krissy",
+			"name": "SusieQ",
+			"img": "PUTADOGURLINHERE"
+		},
+		"dogId2": {
+			"uid": "vmHBejG9KFb7yNTESWn7KtdwpwR2",
+			"name": "Bella",
 			"img": "PUTADOGURLINHERE"
 		}
 	}

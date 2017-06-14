@@ -1,10 +1,20 @@
-app.controller("SearchPageCtrl", function($rootScope, $scope, GoogleFactory, PlacesFactory, ){
-console.log("inside seach controller");
+app.controller("SearchPageCtrl", function($rootScope, $scope, GoogleFactory, PlacesFactory, DogFactory){
+
 	$scope.searchPlaces = "";
 	$scope.places = [];
 	$scope.newPlace = {};
+	$scope.dogs = [];
 
 	$scope.newForm = false;
+
+	DogFactory.getDogs($rootScope.user.uid)
+		.then((dogs)=>{
+			$scope.dogs = dogs;
+			console.log("inside the DogFactory to get the dog id", dogs);
+		}).catch((error)=>{
+			console.log("error in the DogFactory.getDogs", error);
+		});
+
 
 	$scope.returnPlaces= ()=>{
 		GoogleFactory.getPlaces($scope.searchPlaces)
@@ -31,21 +41,17 @@ console.log("inside seach controller");
 	}
 
 	$scope.addNewPlace =()=>{
-		let newPlace = {};
-			newPlace.isDogFriendly: ,
-			newPlace.name: $scope.newPlace.name,
-			newPlace.comment: $scope.comment,
-			newPlace.vicinity: $scope.newPlace.vicinity,
-			newPlace.uid: $rootScope.user.uid,
-			newPlace.googleId: "QfHqKp3PfFfsQafzUoS94zLfn5l1",
-			newPlace.category : $scope.newPlace.category,
-			newPlace.date: "2017-06-02T05:00:00.000Z",
-			newPlace.dogId: 
-		PlacesFactory.postNewPlace
-	}
-	// $scope.newPlace = ()=>{
-	// 	PlacesFactory.postNewPlace
-	// }
+			$scope.newPlace.isDogFriendly = $scope.newPlace.isDogFriendly;
+			$scope.newPlace.comment= $scope.newPlace.comment;
+			$scope.newPlace.uid= $rootScope.user.uid;
+			$scope.newPlace.category= $scope.newPlace.category;
+			$scope.newPlace.date= "2017-06-02T05:00:00.000Z";
+	};
 
+	$scope.chooseDog=(dogId)=>{
+	$scope.newPlace.dogId= dogId;
+		
+	};
+	
 
 });
