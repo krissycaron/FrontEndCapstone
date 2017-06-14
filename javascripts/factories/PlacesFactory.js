@@ -1,7 +1,7 @@
 app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG){
 
 
-   let postNewItem = (newSavedPlace) =>{
+   let postNewPlace = (newSavedPlace) =>{
     return $q((resolve, reject) => {
       $http.post(`${FIREBASE_CONFIG.databaseURL}/places.json`, JSON.stringify(newSavedPlace))
       .then((resultz)=>{
@@ -12,7 +12,7 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
     });
   };
 
-
+return {postNewPlace: postNewPlace}
 
 
 
