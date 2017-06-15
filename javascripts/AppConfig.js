@@ -38,13 +38,13 @@ app.config(function($routeProvider){
 	    templateUrl: 'partials/auth.html',
 	    controller: 'AuthCtrl'
 	  })
-	.when('/places/new', {
-		templateUrl: 'partials/newPlaces.html',
-		controller: 'NewPlacesCtrl'
+	.when('/newplace', {
+		templateUrl: 'partials/searchPlaces.html',
+		controller: 'SearchPageCtrl'
 	  })
-	.when('/places/list', {
+	.when('/list', {
 		templateUrl: 'partials/viewUserPlaces.html',
-		controller: 'ViewPlacesCtrl'
+		controller: 'ViewUserPlacesCtrl'
 	  })
   		.otherwise('/auth');
 

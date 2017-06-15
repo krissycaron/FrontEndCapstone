@@ -7,3 +7,5 @@ app.constants("FIREBASE_CONFIG",{
     messagingSenderId: "",
     GoogleMapsLoader.KEY = '';
   });
+
+  app.constant("GOOGLE_PLACES", "");

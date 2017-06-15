@@ -1,0 +1,70 @@
+<div ng-hide="newForm">
+	<input type="text" name="search" ng-model="searchPlaces">
+	<button ng-click="returnPlaces()">Search</button>
+
+
+<!-- This is the informaiton populating from the Google   --> 
+
+	<div ng-repeat="place in places">
+		<div class="col-md-3">
+			<div class="panel panel-default">
+		  		<div class="panel-heading">
+		  			<img src="{{place.icon}}">
+		    		<h3 class="panel-title">{{place.name}}</h3>
+		  		</div>
+		  		<div class="panel-body">
+		  			<p>{{place.vicinity}}</p>
+		  			<div>
+		  				<button ng-click="newView(place)">Save</button>
+		  				<!-- ng-keyup="$event.keyCode == 13 ? newView(place) : null" -->
+		  			</div>
+		  		</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-show="newForm">
+<!--add a form here with above data to match the seed file-->
+	<div>
+		<p>{{newPlace.name}}</p>
+		<p>{{newPlace.vicinity}}</p>
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Why were You here? 
+			    <span class="fa fa-paw"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			    <li><a ng-click="setCategory('breakfast')">Breakfast</a></li>
+			    <li><a ng-click="setCategory('brunch')">Brunch</a></li>
+			    <li><a ng-click="setCategory('lunch')">Lunch</a></li>
+			    <li><a ng-click="setCategory('dinner')">Dinner</a></li>
+			    <li><a ng-click="setCategory('cafe')">Cafe</a></li>
+			    <li><a ng-click="setCategory('walk')">Walk</a></li>
+			    <li><a ng-click="setCategory('run')">Run</a></li>
+			    <li><a ng-click="setCategory('paddle')">Paddle</a></li>
+			<!--     <li role="separator" class="divider"></li>
+			    <li><a href="#">Separated link</a></li> -->
+			  </ul>
+			</div>
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Dogs 
+			    <span class="fa fa-paw"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+				<li ng-repeat="dog in dogs"><a ng-click="chooseDog(dog.id)">{{dog.name}}</a></li>
+			<!--     <li role="separator" class="divider"></li>
+			    <li><a href="#">Separated link</a></li> -->
+			  </ul>
+			</div>
+
+			<div>
+				<input type="text" name="comments" placeholder="Review of Dog Friendly-ness" ng-model="newPlace.comment">
+				<input type="date" class="form-control" uib-datepicker-popup ng-model="newTask.dueDate" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+			</div>
+
+		<i class="fa fa-paw" aria-hidden="true"></i>
+		<input type="checkbox" name="isDogFriendly" ng-model="newPlace.isDogFriendly"/>Dog Friendly?
+		<button ng-click="addNewPlace()">Save</button>
+	</div>
+</div>

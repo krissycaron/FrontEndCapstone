@@ -23,8 +23,8 @@ app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, 
 		}).then((user)=>{
 			$rootScope.user = user; //this is where we are connecting the user ID from FB to the currently logged in user.
 			//global scope (rootScoop) can be accessed from everywhere
-			$location.url('/places/list');
- 			console.log("user", user);  
+			console.log("user", user);  
+			$location.url('/newplace');
 		}).catch((error)=> {
 			console.log("getUser error", error);
 		});
