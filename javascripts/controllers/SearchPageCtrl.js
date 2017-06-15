@@ -1,4 +1,4 @@
-app.controller("SearchPageCtrl", function($rootScope, $scope, GoogleFactory, PlacesFactory, DogFactory){
+app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $scope, GoogleFactory, PlacesFactory, DogFactory){
 
 	$scope.searchPlaces = "";
 	$scope.places = [];
@@ -41,11 +41,21 @@ app.controller("SearchPageCtrl", function($rootScope, $scope, GoogleFactory, Pla
 	}
 
 	$scope.addNewPlace =()=>{
+		console.log("addNewPlace was clicked");
 			$scope.newPlace.isDogFriendly = $scope.newPlace.isDogFriendly;
 			$scope.newPlace.comment= $scope.newPlace.comment;
 			$scope.newPlace.uid= $rootScope.user.uid;
 			$scope.newPlace.category= $scope.newPlace.category;
 			$scope.newPlace.date= "2017-06-02T05:00:00.000Z";
+	
+			PlacesFactory.postNewPlace($scope.newPlace)
+			.then((response)=>{
+				$scope.newPlace = {}; //clears the object
+				$location.url("/list")
+			}).catch((error)=>{
+				console.log("postNewPlace error in SearchPageCtrl", error);
+			});
+
 	};
 
 	$scope.chooseDog=(dogId)=>{

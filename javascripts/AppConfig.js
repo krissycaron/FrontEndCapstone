@@ -44,7 +44,7 @@ app.config(function($routeProvider){
 	  })
 	.when('/list', {
 		templateUrl: 'partials/viewUserPlaces.html',
-		controller: 'ViewPlacesCtrl'
+		controller: 'ViewUserPlacesCtrl'
 	  })
   		.otherwise('/auth');
 
