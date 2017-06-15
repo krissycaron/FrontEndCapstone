@@ -2,7 +2,7 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
   
    let getPlacesList = ((userId)=>{
     return $q ((resolve, reject)=>{
-      let dogz  =[];
+      let placez  =[];
       $http.get(`${FIREBASE_CONFIG.databaseURL}/places.json?orderBy="uid"&equalTo="${userId}"`)
       .then((resultz)=>{
         console.log("resultz in getPlacesList", resultz);
@@ -10,7 +10,7 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
                 if (placesCollection !== null){
                   Object.keys(placesCollection).forEach((key) => {
                   placesCollection[key].id=key;
-                  dogz.push(placesCollection[key]);
+                  placez.push(placesCollection[key]);
                   });
             }
         resolve(placez);
@@ -33,7 +33,7 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
     });
   };
 
-return {postNewPlace: postNewPlace, getPlacesList:getPlacesList}
+  return {postNewPlace: postNewPlace, getPlacesList:getPlacesList};
 
 
 

@@ -1,4 +1,4 @@
-app.controller("ViewUserPlacesCtrl", function($scope, $location, $q, $http, PlacesFactory, GoogleFactory) {
+app.controller("ViewUserPlacesCtrl", function($rootScope, $scope, PlacesFactory) {
 console.log("inside the ViewUserPlacesCtrl");
 ///this is the users saved places view
 	$scope.places = [];
@@ -11,22 +11,10 @@ console.log("inside the ViewUserPlacesCtrl");
 		}).catch((error)=>{
 			console.log("error in getUsersPlaces", error);
 		});
-	}
+	};
 
+	getUsersPlaces();
 
 });
 
 
-///==============================
-
-
-// $scope.items = [];
-      
-//     let getItems = () =>{
-//       itemFactory.getItemList($rootScope.user.uid).then((itemz)=>{
-//         console.log("items", itemz);
-//         $scope.items = itemz;
-//         }).catch((error)=>{
-//         console.log("got and error", error);
-//         });
-//       };

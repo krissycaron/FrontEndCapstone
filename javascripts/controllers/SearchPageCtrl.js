@@ -34,11 +34,11 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 		$scope.newPlace.googleId =place.place_id;
 		console.log($scope.newPlace);
 		$scope.newForm=true;
-		}
+		};
 
 	$scope.setCategory = (clickput) => {
 		$scope.newPlace.category = clickput;
-	}
+	};
 
 	$scope.addNewPlace =()=>{
 		console.log("addNewPlace was clicked");
@@ -51,7 +51,7 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 			PlacesFactory.postNewPlace($scope.newPlace)
 			.then((response)=>{
 				$scope.newPlace = {}; //clears the object
-				$location.url("/list")
+				$location.url("/list");
 			}).catch((error)=>{
 				console.log("postNewPlace error in SearchPageCtrl", error);
 			});
@@ -62,6 +62,7 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 	$scope.newPlace.dogId= dogId;
 		
 	};
+
 	
 
 });
