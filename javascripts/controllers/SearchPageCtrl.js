@@ -59,7 +59,7 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 	};
 
 	$scope.chooseDog=(dogId)=>{
-	$scope.newPlace.dogId= dogId;
+	$scope.newPlace.dogId = dogId;
 		
 	};
 	

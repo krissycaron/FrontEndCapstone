@@ -1,17 +1,46 @@
-app.controller("ViewUserPlacesCtrl", function($rootScope, $scope, PlacesFactory) {
+app.controller("ViewUserPlacesCtrl", function($rootScope, $scope, PlacesFactory, DogFactory) {
 console.log("inside the ViewUserPlacesCtrl");
 ///this is the users saved places view
 	$scope.places = [];
+
 
 	let getUsersPlaces = (place) => {
 		PlacesFactory.getPlacesList($rootScope.user.uid)
 		.then((placez) => {
 			console.log("placez", placez);
-			$scope.places = placez; 
+			$scope.places = placez;
+			$scope.places.forEach((place)=>{
+				getDogsPerPlace(place);
+			});
 		}).catch((error)=>{
 			console.log("error in getUsersPlaces", error);
 		});
 	};
+
+	let getDogsPerPlace = (place) =>{
+		DogFactory.getDogs($rootScope.user.uid)
+		.then((dogz)=>{
+			dogz.forEach((dog)=>{
+				if (dog.id === place.dogId){
+					place.dog = dog;
+				}
+			});
+			console.log(dogz);
+		}).catch((error)=>{
+			console.log("error in getDogsPerPlace", error);
+		});
+	};
+
+
+
+// DogFactory.getDogs($rootScope.user.uid)
+// 		.then((dogs)=>{
+// 			$scope.dogs = dogs;
+// 			console.log("inside the DogFactory to get the dog id", dogs);
+// 		}).catch((error)=>{
+// 			console.log("error in the DogFactory.getDogs", error);
+// 		});
+
 
 
 	$scope.deleteCard = (placeId) =>{
@@ -25,16 +54,5 @@ console.log("inside the ViewUserPlacesCtrl");
 	};
 
 	getUsersPlaces();
-
+ 	console.log($scope.places);
 });
-
-
-//    $scope.deleteItem = (id) =>{
-//       console.log("deleteItem");
-//       itemFactory.deletez(id).then(()=>{
-// console.log("deleteItem");
-//         getItems();
-//       }).catch((error)=>{
-//         console.log("delete item error", error);
-//       });
-//     };

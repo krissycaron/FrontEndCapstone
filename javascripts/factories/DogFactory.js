@@ -19,7 +19,6 @@ app.factory("DogFactory", function($q, $http, FIREBASE_CONFIG){
 			});
 		});
 	});
-	
 
 
 	return {getDogs:getDogs};
