@@ -62,7 +62,6 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 	$scope.newPlace.dogId= dogId;
 		
 	};
-
 	
 
 });

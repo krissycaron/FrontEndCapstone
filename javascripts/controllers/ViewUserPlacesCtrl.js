@@ -3,7 +3,7 @@ console.log("inside the ViewUserPlacesCtrl");
 ///this is the users saved places view
 	$scope.places = [];
 
-	let getUsersPlaces = () => {
+	let getUsersPlaces = (place) => {
 		PlacesFactory.getPlacesList($rootScope.user.uid)
 		.then((placez) => {
 			console.log("placez", placez);
@@ -13,8 +13,28 @@ console.log("inside the ViewUserPlacesCtrl");
 		});
 	};
 
+
+	$scope.deleteCard = (placeId) =>{
+		PlacesFactory.deleteSinglePlace(placeId)
+		.then(()=>{
+			console.log("deleteCard in ViewUserPlacesCtrl");
+			getUsersPlaces();	
+		}).catch((error)=>{
+			console.log("deleteCard error", error);
+		});
+	};
+
 	getUsersPlaces();
 
 });
 
 
+//    $scope.deleteItem = (id) =>{
+//       console.log("deleteItem");
+//       itemFactory.deletez(id).then(()=>{
+// console.log("deleteItem");
+//         getItems();
+//       }).catch((error)=>{
+//         console.log("delete item error", error);
+//       });
+//     };

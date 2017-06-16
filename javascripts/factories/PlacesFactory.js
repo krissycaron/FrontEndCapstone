@@ -33,7 +33,22 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
     });
   };
 
-  return {postNewPlace: postNewPlace, getPlacesList:getPlacesList};
+
+  let deleteSinglePlace = (Id)=>{
+    return $q((resolve, reject)=>{
+      $http.delete(`${FIREBASE_CONFIG.databaseURL}/places/${Id}.json`)
+      .then((resultz)=>{
+        console.log("delete clicked");
+        resolve(resultz);
+      }).catch((error)=>{
+        console.log("error in the deleteSinglePlace", error);
+      });
+    });
+  };
+
+
+
+  return {postNewPlace: postNewPlace, getPlacesList:getPlacesList, deleteSinglePlace:deleteSinglePlace};
 
 
 

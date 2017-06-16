@@ -1,6 +1,5 @@
 
 <h2>Inside the user profile list view</h2>
-
 	<div ng-repeat="place in places">
 		<div class="col-md-3">
 			<div class="panel panel-default">
@@ -9,9 +8,12 @@
 		    		<h3 class="panel-title">{{place.name}}</h3>
 		  		</div>
 		  		<div class="panel-body">
-		  			<p>{{place.vicinity}}</p>
+		  			<h6>{{place.vicinity}}</h6>
+		  			<p>{{place.comment}}</p>
+
 		  			<div>
 		  				<button ng-click="editCard()">Edit</button>
+		  				<button ng-click="deleteCard(place.id)">Delete</button>
 		  				<!-- ng-keyup="$event.keyCode == 13 ? newView(place) : null" -->
 		  			</div>
 		  		</div>
