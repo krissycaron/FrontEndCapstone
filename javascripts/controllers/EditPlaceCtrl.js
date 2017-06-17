@@ -30,14 +30,16 @@ app.controller("EditPlaceCtrl", function($location, $routeParams, $scope, Places
 		});
 	};
 
+
+
 	let getSinglePlace = (placeId) =>{
 		console.log("edit button clicked");
 		PlacesFactory.getSinglePlace(placeId)
 		.then((resultz)=>{
 			console.log(resultz);
 			resultz.dueDate =new Date(resultz.dueDate);
+			console.log(resultz);
 			$scope.newPlace = resultz;
-			// getUsersPlaces();
 		}).catch((error)=>{
 			console.log("error in editThisPlace", error);
 		});

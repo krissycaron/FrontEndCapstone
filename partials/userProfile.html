@@ -1,2 +1,25 @@
 <h3>USER SPECIFIC PROFILE</h3>
 <p>be able to create a new dog, read and delete a dog</p>
+<div ng-repeat="dog in dogs">
+		<div class="col-md-3">x
+			<div class="panel panel-default">
+		  		<div class="panel-heading">
+		  			
+		    		<h3 class="panel-title">{{place.name}}</h3>
+		  		</div>
+		  		<div class="panel-body">
+		  			<div>
+		  				<img src="{{dogs.url}}">
+		  			</div>
+		  			<h4>{{dog.name}}</h4>
+
+		  			<div>
+		  				<a ng-href="/#!/editPlace/{{place.id}}">Edit</a>
+		  				<button ng-click="deleteCard(place.id)">Delete</button>
+		  				<!-- ng-keyup="$event.keyCode == 13 ? newView(place) : null" -->
+		  			</div>
+		  		</div>
+			</div>
+		</div>
+	</div>
+

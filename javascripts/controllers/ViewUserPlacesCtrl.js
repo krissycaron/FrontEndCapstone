@@ -8,7 +8,7 @@ console.log("inside the ViewUserPlacesCtrl");
 	let getUsersPlaces = (place) => {
 		PlacesFactory.getPlacesList($rootScope.user.uid)
 		.then((placez) => {
-			console.log("placez", placez);
+			// console.log("placez", placez);
 			$scope.places = placez;
 			$scope.places.forEach((place)=>{
 				getDogsPerPlace(place);

@@ -3,7 +3,8 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
    
    let getPlacesList = ((userId)=>{
     return $q ((resolve, reject)=>{
-      let placez  =[];
+      
+    let placez  =[];
       $http.get(`${FIREBASE_CONFIG.databaseURL}/places.json?orderBy="uid"&equalTo="${userId}"`)
       .then((resultz)=>{
         console.log("resultz in getPlacesList", resultz);
@@ -26,7 +27,7 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
     return $q((resolve, reject)=>{
       $http.get(`${FIREBASE_CONFIG.databaseURL}/places/${id}.json`)
       .then((resultz)=>{
-
+        resultz.data.id = id;
         resolve(resultz.data);
       }).catch(()=>{
         console.log("get single item error", error);
@@ -47,9 +48,9 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
   };
 
   let editPlace = (place) =>{
-    console.log("place", place);
+    console.log("place in editPlace", place);
     return $q((resolve, reject)=>{
-      $http.put(`${FIREBASE_CONFIG.databaseURL}/places/${place.Id}.json`,
+      $http.put(`${FIREBASE_CONFIG.databaseURL}/places/${place.id}.json`,
       JSON.stringify ({
         isDogFriendly: place.isDogFriendly,
         name: place.name,
