@@ -42,6 +42,8 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 		$scope.newPlace.category = clickput;
 	};
 
+	$scope.newPlace.isDogFriendly = false;
+
 	$scope.addNewPlace =()=>{
 		console.log("addNewPlace was clicked");
 			$scope.newPlace.isDogFriendly = $scope.newPlace.isDogFriendly;

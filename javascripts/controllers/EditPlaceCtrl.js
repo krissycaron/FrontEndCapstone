@@ -21,18 +21,31 @@ app.controller("EditPlaceCtrl", function($location, $routeParams, $scope, Places
 	};
 
 	//edit scope function here: 
+	$scope.editSinglePlace = ()=>{
+		PlacesFactory.editPlace($scope.newPlace)
+		.then(()=>{
+			$location.url(`/list`);
+		}).catch((error)=>{
+			console.log("error in editSinglePlace", error);
+		});
+	};
 
 	let getSinglePlace = (placeId) =>{
 		console.log("edit button clicked");
 		PlacesFactory.getSinglePlace(placeId)
 		.then((resultz)=>{
 			console.log(resultz);
+			resultz.dueDate =new Date(resultz.dueDate);
 			$scope.newPlace = resultz;
 			// getUsersPlaces();
 		}).catch((error)=>{
 			console.log("error in editThisPlace", error);
 		});
 	};
-	getSinglePlace($routeParams.placeId)
+	getSinglePlace($routeParams.placeId);
 
 });
+
+
+
+
