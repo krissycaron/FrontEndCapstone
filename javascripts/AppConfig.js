@@ -46,6 +46,10 @@ app.config(function($routeProvider){
 		templateUrl: 'partials/viewUserPlaces.html',
 		controller: 'ViewUserPlacesCtrl'
 	  })
+  .when('/profile', {
+    templateUrl: 'partials/userProfile.html',
+    controller: 'UserProfileCtrl'
+    })
   		.otherwise('/auth');
 
 
