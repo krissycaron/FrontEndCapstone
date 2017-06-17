@@ -1,8 +1,8 @@
 app.factory("DogFactory", function($q, $http, FIREBASE_CONFIG){
 
-	let getDogs = ((userId)=>{
+	let getDogs = (userId)=>{
+		let dogz  =[];
 		return $q ((resolve, reject)=>{
-			let dogz  =[];
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/dogs.json?orderBy="uid"&equalTo="${userId}"`)
 			.then((resultz)=>{
 				console.log("resultz in getDogs", resultz);
@@ -18,7 +18,7 @@ app.factory("DogFactory", function($q, $http, FIREBASE_CONFIG){
 				console.log("getDogs error", error);
 			});
 		});
-	});
+	};
 
 	let postNewDog = (dogId)=>{
 		return $q((resolve, reject)=>{
