@@ -33,16 +33,6 @@ console.log("inside the ViewUserPlacesCtrl");
 
 
 
-// DogFactory.getDogs($rootScope.user.uid)
-// 		.then((dogs)=>{
-// 			$scope.dogs = dogs;
-// 			console.log("inside the DogFactory to get the dog id", dogs);
-// 		}).catch((error)=>{
-// 			console.log("error in the DogFactory.getDogs", error);
-// 		});
-
-
-
 	$scope.deleteCard = (placeId) =>{
 		PlacesFactory.deleteSinglePlace(placeId)
 		.then(()=>{
@@ -56,3 +46,5 @@ console.log("inside the ViewUserPlacesCtrl");
 	getUsersPlaces();
  	console.log($scope.places);
 });
+
+
