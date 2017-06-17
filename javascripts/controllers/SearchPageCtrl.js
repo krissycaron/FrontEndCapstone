@@ -7,6 +7,8 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 
 	$scope.newForm = false;
 
+	$scope.editMode = false;
+
 	DogFactory.getDogs($rootScope.user.uid)
 		.then((dogs)=>{
 			$scope.dogs = dogs;

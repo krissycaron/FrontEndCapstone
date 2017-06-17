@@ -2,6 +2,7 @@ app.controller("ViewUserPlacesCtrl", function($rootScope, $scope, PlacesFactory,
 console.log("inside the ViewUserPlacesCtrl");
 ///this is the users saved places view
 	$scope.places = [];
+	$scope.editedPlace ={};
 
 
 	let getUsersPlaces = (place) => {
@@ -30,7 +31,6 @@ console.log("inside the ViewUserPlacesCtrl");
 			console.log("error in getDogsPerPlace", error);
 		});
 	};
-
 
 
 	$scope.deleteCard = (placeId) =>{

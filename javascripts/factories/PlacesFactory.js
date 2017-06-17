@@ -1,5 +1,6 @@
 app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG){
-  
+  console.log("inside the PlacesFactory");
+   
    let getPlacesList = ((userId)=>{
     return $q ((resolve, reject)=>{
       let placez  =[];
@@ -20,6 +21,18 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
     });
   });
   
+
+    let getSinglePlace = (id) => {
+    return $q((resolve, reject)=>{
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/places/${id}.json`)
+      .then((resultz)=>{
+
+        resolve(resultz.data);
+      }).catch(()=>{
+        console.log("get single item error", error);
+      });
+    });
+  };
 
 
    let postNewPlace = (newSavedPlace) =>{
@@ -68,20 +81,8 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
     });
   };
 
-  return {postNewPlace: postNewPlace, getPlacesList:getPlacesList, editPlace:editPlace, deleteSinglePlace:deleteSinglePlace};
+  return {postNewPlace: postNewPlace, getPlacesList:getPlacesList, getSinglePlace:getSinglePlace, editPlace:editPlace, deleteSinglePlace:deleteSinglePlace};
 
 });
 
 
-
-
-
-      // "isDogFriendly": true,
-      // "name": "placeName2",
-      // "comment": "test this comment place",
-      // "vicinity": "1812 21st Avenue South, Nashville",
-      // "uid": "vcpZR35CjCO3TrkkpUEkC5iBI222",
-      // "googleId": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
-      // "category" : "lunch",
-      // "date": "2017-06-02T05:00:00.000Z",
-      // "dogId": "dogId0"
