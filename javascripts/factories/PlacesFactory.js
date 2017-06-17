@@ -1,8 +1,10 @@
 app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG){
-  
+  console.log("inside the PlacesFactory");
+   
    let getPlacesList = ((userId)=>{
     return $q ((resolve, reject)=>{
-      let placez  =[];
+      
+    let placez  =[];
       $http.get(`${FIREBASE_CONFIG.databaseURL}/places.json?orderBy="uid"&equalTo="${userId}"`)
       .then((resultz)=>{
         console.log("resultz in getPlacesList", resultz);
@@ -21,6 +23,18 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
   });
   
 
+    let getSinglePlace = (id) => {
+    return $q((resolve, reject)=>{
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/places/${id}.json`)
+      .then((resultz)=>{
+        resultz.data.id = id;
+        resolve(resultz.data);
+      }).catch(()=>{
+        console.log("get single item error", error);
+      });
+    });
+  };
+
 
    let postNewPlace = (newSavedPlace) =>{
     return $q((resolve, reject) => {
@@ -33,6 +47,28 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
     });
   };
 
+  let editPlace = (place) =>{
+    console.log("place in editPlace", place);
+    return $q((resolve, reject)=>{
+      $http.put(`${FIREBASE_CONFIG.databaseURL}/places/${place.id}.json`,
+      JSON.stringify ({
+        isDogFriendly: place.isDogFriendly,
+        name: place.name,
+        comment: place.comment,
+        vicinity: place.vicinity,
+        uid: place.uid,
+        googleId: place.googleId,
+        category:place.category,
+        date: place.date,
+        dogId: place.dogId
+      })
+      ).then((resultz)=>{
+        resolve(resultz);
+      }).catch((error)=>{
+        console.log("error in editItem");
+      });
+    });
+  };
 
   let deleteSinglePlace = (Id)=>{
     return $q((resolve, reject)=>{
@@ -46,11 +82,7 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
     });
   };
 
-
-
-  return {postNewPlace: postNewPlace, getPlacesList:getPlacesList, deleteSinglePlace:deleteSinglePlace};
-
-
+  return {postNewPlace: postNewPlace, getPlacesList:getPlacesList, getSinglePlace:getSinglePlace, editPlace:editPlace, deleteSinglePlace:deleteSinglePlace};
 
 });
 

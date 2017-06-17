@@ -7,6 +7,8 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 
 	$scope.newForm = false;
 
+	$scope.editMode = false;
+
 	DogFactory.getDogs($rootScope.user.uid)
 		.then((dogs)=>{
 			$scope.dogs = dogs;
@@ -40,6 +42,8 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 		$scope.newPlace.category = clickput;
 	};
 
+	$scope.newPlace.isDogFriendly = false;
+
 	$scope.addNewPlace =()=>{
 		console.log("addNewPlace was clicked");
 			$scope.newPlace.isDogFriendly = $scope.newPlace.isDogFriendly;
@@ -59,7 +63,7 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 	};
 
 	$scope.chooseDog=(dogId)=>{
-	$scope.newPlace.dogId= dogId;
+	$scope.newPlace.dogId = dogId;
 		
 	};
 	

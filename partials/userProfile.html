@@ -1,18 +1,17 @@
-
-<h2>Inside the user profile list view</h2>
-	<div ng-repeat="place in places">
+<h3>USER SPECIFIC PROFILE</h3>
+<p>be able to create a new dog, read and delete a dog</p>
+<div ng-repeat="dog in dogs">
 		<div class="col-md-3">x
 			<div class="panel panel-default">
 		  		<div class="panel-heading">
-		  			<img src="{{place.icon}}">
+		  			
 		    		<h3 class="panel-title">{{place.name}}</h3>
 		  		</div>
 		  		<div class="panel-body">
-		  			<h6>{{place.vicinity}}</h6>
-		  			<p>{{place.comment}}</p>
-		  			<p>{{place.date | date:"MM/dd/yyyy"}}</p>
-		  			<p>Dog Friendly? {{place.isDogFriendly}}</p>
-		  			<p>Dog Brought: {{place.dog.name}}</p>
+		  			<div>
+		  				<img src="{{dogs.url}}">
+		  			</div>
+		  			<h4>{{dog.name}}</h4>
 
 		  			<div>
 		  				<a ng-href="/#!/editPlace/{{place.id}}">Edit</a>
@@ -23,5 +22,4 @@
 			</div>
 		</div>
 	</div>
-
 

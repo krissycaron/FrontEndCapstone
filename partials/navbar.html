@@ -9,8 +9,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right" ng-if="user.uid">
           <!-- thingy in navItems, navItems must be on scope and must be an array -->
-            <li><a ng-href="#!/places/list">My Profile</a></li>
-            <li><a ng-href="#!/places/new">Search</a></li>
+            <li><a ng-href="#!/profile">My Profile</a></li>
+            <li><a ng-href="#!/list">My Saved Places</a></li>
+            <li><a ng-href="#!/newplace">Search</a></li>
             <li><a ng-href="#!/logout">Logout</a></li>
           </ul>
            <ul class="nav navbar-nav navbar-right" ng-if="!user.uid">

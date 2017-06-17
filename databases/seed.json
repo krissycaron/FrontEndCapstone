@@ -5,7 +5,7 @@
 			"name": "placeName1",
 			"comment": "test this comment place",
 			"vicinity": "1812 21st Avenue South, Nashville",
-			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
+			"uid": "9ow4HauwrGbM7dx91b3xAFiCMhf1",
 			"googleId": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
 			"category" : "brunch",
 			"date": "2017-06-02T05:00:00.000Z",
@@ -16,7 +16,18 @@
 			"name": "placeName2",
 			"comment": "test this comment place",
 			"vicinity": "1812 21st Avenue South, Nashville",
-			"uid": "qQE6nThm6zNoM6QvM1gN7FVE5D62",
+			"uid": "4uqUMeqdjuStFsHstR7MJ02wAa33",
+			"googleId": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
+			"category" : "lunch",
+			"date": "2017-06-02T05:00:00.000Z",
+			"dogId": "dogId0"
+		},
+		"place2": {
+			"isDogFriendly": true,
+			"name": "placeName3",
+			"comment": "test this comment place",
+			"vicinity": "1812 21st Avenue South, Nashville",
+			"uid": "knHhrSmWOLRoKzuy3afbU1o2wuC3x",
 			"googleId": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
 			"category" : "lunch",
 			"date": "2017-06-02T05:00:00.000Z",
@@ -25,33 +36,33 @@
 	},
 	"users": {
 		"user0": {
-			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
-			"username": "Krissy"
+			"uid": "9ow4HauwrGbM7dx91b3xAFiCMhf1",
+			"username": "a"
 		},
 		"user1": {
-			"uid": "vcpZR35CjCO3TrkkpUEkC5iBI222",
-			"username": "Carolyn"
+			"uid": "4uqUMeqdjuStFsHstR7MJ02wAa33",
+			"username": "b"
 		},
 		"user2": {
-			"uid": "vmHBejG9KFb7yNTESWn7KtdwpwR2",
-			"username": "Amanda"
+			"uid": "knHhrSmWOLRoKzuy3afbU1o2wuC3",
+			"username": "c"
 		}
 	},
 	"dogs": {
 		"dogId0": {
-			"uid": "vcpZR35CjCO3TrkkpUEkC5iBI222",
+			"uid": "9ow4HauwrGbM7dx91b3xAFiCMhf1",
 			"name": "London",
-			"img": "PUTADOGURLINHERE"
+			"img": "https://www.instagram.com/p/BFmeuGBE5pJ/?taken-by=london_the_lab"
 		},
 		"dogId1": {
-			"uid": "QfHqKp3PfFfsQafzUoS94zLfn5l1",
+			"uid": "4uqUMeqdjuStFsHstR7MJ02wAa33",
 			"name": "SusieQ",
-			"img": "PUTADOGURLINHERE"
+			"img": "https://www.instagram.com/p/BJ1DjJJBgbs/?taken-by=london_the_lab"
 		},
 		"dogId2": {
-			"uid": "vmHBejG9KFb7yNTESWn7KtdwpwR2",
+			"uid": "knHhrSmWOLRoKzuy3afbU1o2wuC3",
 			"name": "Bella",
-			"img": "PUTADOGURLINHERE"
+			"img": "https://www.instagram.com/p/BD3TvvxE5nU/?taken-by=london_the_lab"
 		}
 	}
 }

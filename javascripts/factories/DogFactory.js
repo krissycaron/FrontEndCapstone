@@ -19,10 +19,33 @@ app.factory("DogFactory", function($q, $http, FIREBASE_CONFIG){
 			});
 		});
 	});
-	
+
+	let postNewDog = (dogId)=>{
+		return $q((resolve, reject)=>{
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/dogs.json`, JSON.stringify(newDogs))
+			.then((dogResults) =>{
+				resolve(dogResults);
+			}).catch((error)=>{
+				console.log("error in the postNewDog");
+			});
+		});
+	};
+
+	let deleteSingleDog = (Id) =>{
+		return $q((resolve, reject) => {
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/dogs/${Id}.json`)
+		     .then((resultz)=>{
+		        console.log("delete clicked");
+		       resolve(resultz);
+		     }).catch((error)=>{
+		        console.log("error in the deleteSingleDog", error);
+		     });
+		});
+	};
 
 
-	return {getDogs:getDogs};
+
+	return {getDogs:getDogs, postNewDog: postNewDog, deleteSingleDog: deleteSingleDog};
 
 });
 
