@@ -1,7 +1,9 @@
 app.controller("UserProfileCtrl", function($rootScope, $scope, PlacesFactory, DogFactory) {
+	console.log("UserProfileCtrl");
 	$scope.dogs = [];
 
 	let getPupPerUser= () => {
+
 		DogFactory.getDogs($rootScope.user.uid)
 		.then((dogz) => {
 			console.log("dogz in the UserProfileCtrl", dogz);
@@ -11,6 +13,7 @@ app.controller("UserProfileCtrl", function($rootScope, $scope, PlacesFactory, Do
 		});
 	};
 
+	getPupPerUser();
 	
 
 });
