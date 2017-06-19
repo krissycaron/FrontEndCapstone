@@ -20,11 +20,9 @@ app.factory("DogFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	// let getSingleDog = (userId) =>{
-	// 	let userDogs = [];
-	// }
 
-	let postNewDog = (dogId)=>{
+	let postNewDog = (newDogs)=>{
+		console.log(newDogs);
 		return $q((resolve, reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/dogs.json`, JSON.stringify(newDogs))
 			.then((dogResults) =>{
@@ -35,9 +33,10 @@ app.factory("DogFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	let deleteSingleDog = (Id) =>{
+	let deleteSingleDog = (dogId) =>{
+		console.log("deleteSingleDog clicked dog factory");
 		return $q((resolve, reject) => {
-			$http.delete(`${FIREBASE_CONFIG.databaseURL}/dogs/${Id}.json`)
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/dogs/${dogId}.json`)
 		     .then((resultz)=>{
 		        console.log("delete clicked");
 		       resolve(resultz);
