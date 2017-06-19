@@ -18,10 +18,11 @@ app.controller("UserProfileCtrl", function($rootScope, $scope, PlacesFactory, Do
 
 
 	$scope.addDog = () =>{
-		console.log("addDog was clicked")
-		DogFactory.postNewDog($rootScope.user.uid)
-		.then(()=>{
-			console.log("inside the addDog", )
+		$scope.dog.uid = $rootScope.user.uid;
+		DogFactory.postNewDog($scope.dog)
+		.then((results)=>{
+			console.log(results);
+			getPupPerUser();
 		}).catch((error)=>{
 			console.log("error in addDog");
 		});
