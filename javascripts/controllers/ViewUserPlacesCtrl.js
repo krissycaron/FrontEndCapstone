@@ -1,6 +1,4 @@
 app.controller("ViewUserPlacesCtrl", function($rootScope, $scope, PlacesFactory, DogFactory) {
-console.log("inside the ViewUserPlacesCtrl");
-///this is the users saved places view
 	$scope.places = [];
 	$scope.editedPlace ={};
 
@@ -8,7 +6,6 @@ console.log("inside the ViewUserPlacesCtrl");
 	let getUsersPlaces = (place) => {
 		PlacesFactory.getPlacesList($rootScope.user.uid)
 		.then((placez) => {
-			// console.log("placez", placez);
 			$scope.places = placez;
 			$scope.places.forEach((place)=>{
 				getDogsPerPlace(place);
@@ -26,7 +23,6 @@ console.log("inside the ViewUserPlacesCtrl");
 					place.dog = dog;
 				}
 			});
-			console.log(dogz);
 		}).catch((error)=>{
 			console.log("error in getDogsPerPlace", error);
 		});
@@ -36,7 +32,6 @@ console.log("inside the ViewUserPlacesCtrl");
 	$scope.deleteCard = (placeId) =>{
 		PlacesFactory.deleteSinglePlace(placeId)
 		.then(()=>{
-			console.log("deleteCard in ViewUserPlacesCtrl");
 			getUsersPlaces();	
 		}).catch((error)=>{
 			console.log("deleteCard error", error);
@@ -44,7 +39,7 @@ console.log("inside the ViewUserPlacesCtrl");
 	};
 
 	getUsersPlaces();
- 	console.log($scope.places);
+
 });
 
 

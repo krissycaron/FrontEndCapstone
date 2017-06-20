@@ -1,11 +1,9 @@
 app.factory("DogFactory", function($q, $http, FIREBASE_CONFIG){
-
-	let getDogs = ((userId)=>{
+	let getDogs = (userId)=>{
+		let dogz  =[];
 		return $q ((resolve, reject)=>{
-			let dogz  =[];
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/dogs.json?orderBy="uid"&equalTo="${userId}"`)
 			.then((resultz)=>{
-				console.log("resultz in getDogs", resultz);
 				var dogCollection = resultz.data;
             		if (dogCollection !== null){
               		Object.keys(dogCollection).forEach((key) => {
@@ -18,9 +16,10 @@ app.factory("DogFactory", function($q, $http, FIREBASE_CONFIG){
 				console.log("getDogs error", error);
 			});
 		});
-	});
+	};
 
-	let postNewDog = (dogId)=>{
+
+	let postNewDog = (newDogs)=>{
 		return $q((resolve, reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/dogs.json`, JSON.stringify(newDogs))
 			.then((dogResults) =>{
@@ -31,11 +30,10 @@ app.factory("DogFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	let deleteSingleDog = (Id) =>{
+	let deleteSingleDog = (dogId) =>{
 		return $q((resolve, reject) => {
-			$http.delete(`${FIREBASE_CONFIG.databaseURL}/dogs/${Id}.json`)
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/dogs/${dogId}.json`)
 		     .then((resultz)=>{
-		        console.log("delete clicked");
 		       resolve(resultz);
 		     }).catch((error)=>{
 		        console.log("error in the deleteSingleDog", error);

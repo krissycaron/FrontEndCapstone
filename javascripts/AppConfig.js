@@ -37,6 +37,10 @@ app.config(function($routeProvider){
     templateUrl: 'partials/searchPlaces.html',
     controller: 'EditPlaceCtrl'
     })
+  .when('/addDog', {
+    templateUrl: 'partials/addDog.html',
+    controller: 'UserProfileCtrl'
+    })
   		.otherwise('/auth');
 
 });

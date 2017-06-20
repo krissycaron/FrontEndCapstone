@@ -1,5 +1,4 @@
 app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, UserFactory){
-	console.log("inside, AuthCtrl");
 	$scope.alerts = [];
 	$scope.auth = {
 		email: "a@a.com",
@@ -12,18 +11,13 @@ app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, 
 		$location.url('/auth');
 	}
 
-
-//helper function will call the authenticate function from authFact. 
 	let logMeIn = () =>{
 		AuthFactory.authenticate($scope.auth).then((userCreds)=>{
-			console.log("userCreds", userCreds);
 			return UserFactory.getUser(userCreds.uid);
 		}, (error)=> {
 			 $scope.alerts.push({msg: error.message});
 		}).then((user)=>{
-			$rootScope.user = user; //this is where we are connecting the user ID from FB to the currently logged in user.
-			//global scope (rootScoop) can be accessed from everywhere
-			console.log("user", user);  
+			$rootScope.user = user;  
 			$location.url('/newplace');
 		}).catch((error)=> {
 			console.log("getUser error", error);
@@ -31,20 +25,15 @@ app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, 
 	};
 
 	$scope.registerUser = () =>{
-		//new auth of a user 
-		//adding a user name to database 
-		//the we neet to log in the user
 		AuthFactory.registerWithEmail($scope.auth).then((didRegister)=>{
-			console.log("didRegister", didRegister);
 			$scope.auth.uid = didRegister.uid;
 			return UserFactory.addUser($scope.auth);
 		}, (error)=> {
 			console.log("registerWithEmail error", error);
 		}).then((registerComplete)=>{
 			logMeIn();
-			console.log("registerComplete", registerComplete);
 		}).catch((error)=>{
-			console.log("adduser error", error);
+			console.log("addNewUser error", error);
 		});
 		
 	};
