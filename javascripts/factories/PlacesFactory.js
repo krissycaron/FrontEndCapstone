@@ -1,5 +1,4 @@
 app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG){
-  console.log("inside the PlacesFactory");
    
    let getPlacesList = ((userId)=>{
     return $q ((resolve, reject)=>{
@@ -7,7 +6,6 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
     let placez  =[];
       $http.get(`${FIREBASE_CONFIG.databaseURL}/places.json?orderBy="uid"&equalTo="${userId}"`)
       .then((resultz)=>{
-        console.log("resultz in getPlacesList", resultz);
         var placesCollection = resultz.data;
                 if (placesCollection !== null){
                   Object.keys(placesCollection).forEach((key) => {
