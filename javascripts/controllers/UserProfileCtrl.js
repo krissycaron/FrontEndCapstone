@@ -1,4 +1,4 @@
-app.controller("UserProfileCtrl", function($rootScope, $scope, PlacesFactory, DogFactory) {
+app.controller("UserProfileCtrl", function($rootScope, $location, $scope, PlacesFactory, DogFactory) {
 	console.log("UserProfileCtrl");
 	$scope.dogs = [];
 
@@ -23,6 +23,7 @@ app.controller("UserProfileCtrl", function($rootScope, $scope, PlacesFactory, Do
 		.then((results)=>{
 			console.log(results);
 			getPupPerUser();
+			$location.url("/profile");
 		}).catch((error)=>{
 			console.log("error in addDog");
 		});
