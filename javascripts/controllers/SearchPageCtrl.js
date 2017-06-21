@@ -26,6 +26,10 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 	};
 
 	$scope.newView = (place) =>{
+		// console.log("$scope.newView enter key", ev);
+		// if (){
+
+		// }
 		$scope.newPlace.name =place.name;
 		$scope.newPlace.vicinity =place.vicinity;
 		$scope.newPlace.googleId =place.place_id;

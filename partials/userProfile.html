@@ -1,12 +1,9 @@
-<h3>USER SPECIFIC PROFILE</h3>
-<p>be able to create a new dog, read and delete a dog</p>
-
 	<div>
 		<h2>Add a Dog to your profile</h2>
 		<a class="btn" ng-href="#!/addDog">Add New Dog</a>
 	</div>
 	<div ng-hide="dogForm">
-		<div ng-repeat="dog in dogs">
+		<div ng-repeat="dog in dogs" class="container">
 			<div class="col-md-3">
 				<div class="panel panel-default">
 			  		<div class="panel-heading">
@@ -14,14 +11,11 @@
 			    		<h3 class="panel-title">{{dog.name}}</h3>
 			  		</div>
 			  		<div class="panel-body">
-			  			<div>
-			  				<p>Dog Pic should go here</p>
-			  				<img ng-src="{{dog.img}}">
+			  			<div class="container-fluid">
+			  				<img ng-src="{{dog.img}}" class="img-fluid" alt="Responsive image">
 			  			</div>
 			  			<div>
-			  				<a ng-href="/#!/editPlace/{{dog.id}}">Edit</a>
 			  				<button ng-click="deleteDog(dog.id)">Delete</button>
-			  				<!-- ng-keyup="$event.keyCode == 13 ? newView(place) : null" -->
 			  			</div>
 			  		</div>
 				</div>
