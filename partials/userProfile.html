@@ -1,8 +1,8 @@
-	<div>
+	<div class="col-md-3">
 		<h2>Add a Dog to your profile</h2>
-		<a class="btn" ng-href="#!/addDog">Add New Dog</a>
+		<a class="btn btn-primary btn-lg active" ng-href="#!/addDog">Add New Dog</a>
 	</div>
-	<div ng-hide="dogForm">
+	<div ng-hide="dogForm" class="col-md-4">
 		<div ng-repeat="dog in dogs" class="container">
 			<div class="col-md-3">
 				<div class="panel panel-default">
@@ -15,7 +15,7 @@
 			  				<img ng-src="{{dog.img}}" class="img-fluid" alt="Responsive image">
 			  			</div>
 			  			<div>
-			  				<button ng-click="deleteDog(dog.id)">Delete</button>
+			  				<button class="btn btn-primary btn-md active" ng-click="deleteDog(dog.id)">Delete</button>
 			  			</div>
 			  		</div>
 				</div>
