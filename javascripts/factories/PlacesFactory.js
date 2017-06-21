@@ -2,7 +2,6 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
    
    let getPlacesList = ((userId)=>{
     return $q ((resolve, reject)=>{
-      
     let placez  =[];
       $http.get(`${FIREBASE_CONFIG.databaseURL}/places.json?orderBy="uid"&equalTo="${userId}"`)
       .then((resultz)=>{
@@ -46,7 +45,6 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
   };
 
   let editPlace = (place) =>{
-    console.log("place in editPlace", place);
     return $q((resolve, reject)=>{
       $http.put(`${FIREBASE_CONFIG.databaseURL}/places/${place.id}.json`,
       JSON.stringify ({
@@ -72,7 +70,6 @@ app.factory("PlacesFactory", function($q, $http, GOOGLE_PLACES, FIREBASE_CONFIG)
     return $q((resolve, reject)=>{
       $http.delete(`${FIREBASE_CONFIG.databaseURL}/places/${Id}.json`)
       .then((resultz)=>{
-        console.log("delete clicked");
         resolve(resultz);
       }).catch((error)=>{
         console.log("error in the deleteSinglePlace", error);

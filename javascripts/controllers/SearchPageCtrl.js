@@ -18,6 +18,7 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 	$scope.returnPlaces= ()=>{
 		GoogleFactory.getPlaces($scope.searchPlaces)
 		.then((places)=>{
+			console.log(places.data.results);
 			$scope.places = places.data.results;
 		})
 		.catch((error)=>{
@@ -26,13 +27,10 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 	};
 
 	$scope.newView = (place) =>{
-		// console.log("$scope.newView enter key", ev);
-		// if (){
-
-		// }
 		$scope.newPlace.name =place.name;
 		$scope.newPlace.vicinity =place.vicinity;
 		$scope.newPlace.googleId =place.place_id;
+		$scope.newPlace.icon =place.icon;
 		$scope.newForm=true;
 		};
 
