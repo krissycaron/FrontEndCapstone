@@ -1,6 +1,16 @@
 <div ng-hide="newForm">
-	<input type="text" name="search" ng-model="searchPlaces">
-	<button ng-click="returnPlaces()">Search</button>
+
+<!-- Search Field -->
+	<div class="container col-md-3-offset-3">
+		<form class="navbar-form navbar-left">
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="Search" name="search" ng-model="searchPlaces">
+	        </div>
+	        <button type="submit" class="btn btn-default" ng-click="returnPlaces()" ng-keyup="returnPlaces()">Submit</button>
+	    </form>
+    </div>
+
+
 
 
 <!-- This is the informaiton populating from the Google   --> 
@@ -25,7 +35,7 @@
 </div>
 <div ng-show="newForm">
 <!--add a form here with above data to match the seed file-->
-	<div>
+	<div class="col-md-3">
 		<p>{{newPlace.name}}</p>
 		<p>{{newPlace.vicinity}}</p>
 			<div class="dropdown">
@@ -39,11 +49,12 @@
 			    <li><a ng-click="setCategory('lunch')">Lunch</a></li>
 			    <li><a ng-click="setCategory('dinner')">Dinner</a></li>
 			    <li><a ng-click="setCategory('cafe')">Cafe</a></li>
+			    <li><a ng-click="setCategory('drinks')">Drinks</a></li>
 			    <li><a ng-click="setCategory('walk')">Walk</a></li>
 			    <li><a ng-click="setCategory('run')">Run</a></li>
 			    <li><a ng-click="setCategory('paddle')">Paddle</a></li>
-			    <li><a ng-click="setCategory('paddle')">Hike</a></li>
-			    <li><a ng-click="setCategory('paddle')">Fetch</a></li>
+			    <li><a ng-click="setCategory('hike')">Hike</a></li>
+			    <li><a ng-click="setCategory('fetch')">Fetch</a></li>
 			<!--     <li role="separator" class="divider"></li>
 			    <li><a href="#">Separated link</a></li> -->
 			  </ul>
@@ -58,9 +69,16 @@
 			  </ul>
 			</div>
 
+
 			<div>
+				<span class="input-group">
 				<input type="text" name="comments" placeholder="Review of Dog Friendly-ness" ng-model="newPlace.comment">
-				<input type="date" class="form-control" uib-datepicker-popup ng-model="newPlace.dueDate" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+	                <input type="date" class="form-control" uib-datepicker-popup ng-model="newPlace.dueDate" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+	                <span class="input-group-btn">
+	                	<button type="button" class="btn btn-default" ng-click="isOpened2 = !isOpened2">
+	                    <i class="glyphicon glyphicon-calendar"></i></button>
+	            	</span>
+	            </span><br>
 			</div>
 
 		<i class="fa fa-paw" aria-hidden="true"></i>
@@ -69,3 +87,8 @@
 		<button ng-show="editMode" ng-click="editSinglePlace()">Edit</button>
 	</div>
 </div>
+
+
+
+
+			

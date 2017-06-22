@@ -29,6 +29,7 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 		$scope.newPlace.name =place.name;
 		$scope.newPlace.vicinity =place.vicinity;
 		$scope.newPlace.googleId =place.place_id;
+		$scope.newPlace.icon =place.icon;
 		$scope.newForm=true;
 		};
 
