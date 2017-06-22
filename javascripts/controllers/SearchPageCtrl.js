@@ -18,7 +18,6 @@ app.controller("SearchPageCtrl", function($rootScope, $http, $location, $q, $sco
 	$scope.returnPlaces= ()=>{
 		GoogleFactory.getPlaces($scope.searchPlaces)
 		.then((places)=>{
-			console.log(places.data.results);
 			$scope.places = places.data.results;
 		})
 		.catch((error)=>{
