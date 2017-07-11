@@ -1,0 +1,65 @@
+body {
+	background-color: #8FBAB9;
+	color: #958683;
+	font-family: 'Amatic SC', cursive;
+}
+
+
+
+/* navbar */
+.navbar-default {
+    background-color: #45423D;
+    border-color: #E7E7E7;
+    font-family: 'Amatic SC', cursive;
+    color: #8A4791;
+}
+.navbar-default .navbar-nav a {
+	 color: #8A4791;
+}
+.navbar-default .navbar-brand {
+    color: #958683;
+    font-size: 2em;
+}
+
+
+/* fonts */ 
+
+
+
+/* buttons */ 
+
+.btn-custom1 {
+  background-color: hsl(11, 8%, 55%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7f6f6", endColorstr="#958683");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f7f6f6), to(#958683));
+  background-image: -moz-linear-gradient(top, #f7f6f6, #958683);
+  background-image: -ms-linear-gradient(top, #f7f6f6, #958683);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f6f6), color-stop(100%, #958683));
+  background-image: -webkit-linear-gradient(top, #f7f6f6, #958683);
+  background-image: -o-linear-gradient(top, #f7f6f6, #958683);
+  background-image: linear-gradient(#f7f6f6, #958683);
+  border-color: #958683 #958683 hsl(11, 8%, 44.5%);
+  color: #333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.69);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+.btn-custom2 {
+  background-color: hsl(324, 26%, 39%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dbc1d1", endColorstr="#7d4968");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#dbc1d1), to(#7d4968));
+  background-image: -moz-linear-gradient(top, #dbc1d1, #7d4968);
+  background-image: -ms-linear-gradient(top, #dbc1d1, #7d4968);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dbc1d1), color-stop(100%, #7d4968));
+  background-image: -webkit-linear-gradient(top, #dbc1d1, #7d4968);
+  background-image: -o-linear-gradient(top, #dbc1d1, #7d4968);
+  background-image: linear-gradient(#dbc1d1, #7d4968);
+  border-color: #7d4968 #7d4968 hsl(324, 26%, 28.5%);
+  color: #333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.69);
+  -webkit-font-smoothing: antialiased;
+}

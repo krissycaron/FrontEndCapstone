@@ -1,23 +1,25 @@
-	<div class="col-md-3">
-		<h2>Add a Dog to your profile</h2>
-		<a class="btn btn-primary btn-lg active" ng-href="#!/addDog">Add New Dog</a>
+	<div class="col-md-6">
+		<h2>Add a Pup!</h2>
+		<a class="btn btn-primary btn-lg active btn-custom2" ng-href="#!/addDog">Add New Dog</a>
 	</div>
-	<div ng-hide="dogForm" class="col-md-4">
-		<div ng-repeat="dog in dogs" class="container">
-			<div class="col-md-3">
-				<div class="panel panel-default">
-			  		<div class="panel-heading">
-			  			<h3>Your Dog's Profile</h3>
-			    		<h3 class="panel-title">{{dog.name}}</h3>
-			  		</div>
-			  		<div class="panel-body">
-			  			<div class="thumbnail">
-			  				<img ng-src="{{dog.img}}" class="img-fluid" alt="Responsive image">
-			  			</div>
-			  			<div>
-			  				<button class="btn btn-primary btn-md active" ng-click="deleteDog(dog.id)">Delete</button>
-			  			</div>
-			  		</div>
+	<div class="container">
+		<div ng-hide="dogForm" class="col-sm-8">
+			<div ng-repeat="dog in dogs" class="container">
+				<div class="clearfix" ng-if="$index % 4 == 0"></div>
+				<div class="col-md-6">
+					<div class="panel panel-default">
+				  		<div class="panel-heading">
+				    		<h3 class="panel-title">{{dog.name}}</h3>
+				  		</div>
+				  		<div class="panel-body">
+				  			<div class="thumbnail">
+				  				<img ng-src="{{dog.img}}" class="img-fluid" alt="Responsive image">
+				  			</div>
+				  			<div>
+				  				<button class="btn-custom1 btn btn-primary btn-md active" ng-click="deleteDog(dog.id)">Delete</button>
+				  			</div>
+				  		</div>
+					</div>
 				</div>
 			</div>
 		</div>
